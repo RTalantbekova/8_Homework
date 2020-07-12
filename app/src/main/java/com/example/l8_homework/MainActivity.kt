@@ -9,34 +9,34 @@ import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
 
-    val pi = 3.14
-    var arrayList = arrayOf(4 , 45, 234, 234, 23)
-    var etFirst : EditText? = null
-    var etSecond : EditText? = null
-    var etThird : EditText? = null
-    var etFourth : EditText? = null
-    var etFifth : EditText? = null
+    private val pi = 3.14
+    private var arrayList = arrayOf(4 , 45, 234, 234, 23)
+    private var etFirst : EditText? = null
+    private var etSecond : EditText? = null
+    private var etThird : EditText? = null
+    private var etFourth : EditText? = null
+    private var etFifth : EditText? = null
 
-    var tvFirst : TextView? = null
-    var tvSecond : TextView? = null
-    var tvThird : TextView? = null
-    var tvFourth : TextView? = null
-    var tvFifth : TextView? = null
+    private var tvFirst : TextView? = null
+    private var tvSecond : TextView? = null
+    private var tvThird : TextView? = null
+    private var tvFourth : TextView? = null
+    private var tvFifth : TextView? = null
 
-    var btnUpdate : Button? = null
+    private var btnUpdate : Button? = null
 
     private fun initViews(){
-        etFirst = findViewById<EditText>(R.id.EtFirstArray)
-        etSecond = findViewById<EditText>(R.id.EtSecondArray)
-        etThird = findViewById<EditText>(R.id.EtThirdArray)
-        etFourth = findViewById<EditText>(R.id.EtFourthArray)
-        etFifth = findViewById<EditText>(R.id.EtFifthArray)
+        etFirst = findViewById(R.id.EtFirstArray)
+        etSecond = findViewById(R.id.EtSecondArray)
+        etThird = findViewById(R.id.EtThirdArray)
+        etFourth = findViewById(R.id.EtFourthArray)
+        etFifth = findViewById(R.id.EtFifthArray)
 
-        tvFirst = findViewById<TextView>(R.id.TvFirstArray)
-        tvSecond = findViewById<TextView>(R.id.TvSecondArray)
-        tvThird = findViewById<TextView>(R.id.TvThirdArray)
-        tvFourth = findViewById<TextView>(R.id.TvFourthArray)
-        tvFifth = findViewById<TextView>(R.id.TvFifthArray)
+        tvFirst = findViewById(R.id.TvFirstArray)
+        tvSecond = findViewById(R.id.TvSecondArray)
+        tvThird = findViewById(R.id.TvThirdArray)
+        tvFourth = findViewById(R.id.TvFourthArray)
+        tvFifth = findViewById(R.id.TvFifthArray)
 
         btnUpdate = findViewById(R.id.Update)
     }
@@ -55,17 +55,17 @@ class MainActivity : AppCompatActivity() {
         etFourth?.append(arrayList[3].toString())
         etFifth?.append(arrayList[4].toString())
 
-        tvFirst?.text = CircleLength( etFirst?.text.toString().toInt()).toString()
-        tvSecond?.text = CircleLength( etSecond?.text.toString().toInt()).toString()
-        tvThird?.text = CircleLength( etThird?.text.toString().toInt()).toString()
-        tvFourth?.text = CircleLength( etFourth?.text.toString().toInt()).toString()
-        tvFifth?.text = CircleLength( etFifth?.text.toString().toInt()).toString()
+        tvFirst?.text = circleLength( etFirst?.text.toString().toInt()).toString()
+        tvSecond?.text = circleLength( etSecond?.text.toString().toInt()).toString()
+        tvThird?.text = circleLength( etThird?.text.toString().toInt()).toString()
+        tvFourth?.text = circleLength( etFourth?.text.toString().toInt()).toString()
+        tvFifth?.text = circleLength( etFifth?.text.toString().toInt()).toString()
     }
 
-    private  fun CircleLength (numb : Int) : Double {
+    private  fun circleLength (numb : Int) : Double {
         val res = numb * pi
         return res
-    }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
